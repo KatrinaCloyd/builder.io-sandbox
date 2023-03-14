@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import BuilderComp from '../src/BuilderComp';
+import CustButton from '@/src/CustomButton';
+import CustSection from '@/src/CustomSection';
 
-const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function BuilderTest() {
   return (
     <>
       <Head>
@@ -16,8 +16,19 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
-          <h1>Hullo warld!</h1>
+          <h1>Hullo hullo!</h1>
+          <h2>Builder Test Page</h2>
         </div>
+        <BuilderComp />
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <CustSection heading="Hard Coded Custom Section" button={undefined}></CustSection>
+        <CustButton />
       </main>
     </>
   )
