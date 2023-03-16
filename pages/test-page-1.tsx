@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import BuilderComp from '../src/BuilderComp';
-import CustButton from '@/src/CustomButton';
-import CustSection from '@/src/CustomSection';
+import '../src/CustomButton';
+import '../src/CustomSection';
+import '../src/ResImage';
+
+import { Builder } from '@builder.io/react';
 
 
 export default function BuilderTest() {
@@ -20,16 +23,16 @@ export default function BuilderTest() {
           <h2>Builder Test Page</h2>
         </div>
         <BuilderComp />
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <CustSection heading="Hard Coded Custom Section" button={undefined}></CustSection>
-        <CustButton />
       </main>
     </>
   )
 }
+
+// how do we get all of the current button symbols and feed them into this menu section
+// const buttonSymbols = builder.get('Button Symbols');
+// console.log('---', buttonSymbols);
+
+Builder.register('insertMenu', {
+  name: 'Child Components',
+  items: [{ name: 'Custom Button' }, {name: 'Responsive Image'}]
+});
